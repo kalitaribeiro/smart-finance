@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<head>
+    <title>Despesas</title>
+    <link rel="stylesheet" type="text/css" href="smart_login.css?version=7">
+</head>
+<body class="body2">
+    <div class="despesas">
+        <img src="logo3.jpg" alt="Foto" class="foto">
+
+        
+
+    <h1 class="despesas">Despesas</h1>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .expenses-section {
+            margin-bottom: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 5px; 
+            width: 370px;
+            height: 170px;
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+            background-color:#245B8E;
+                }
+        .expenses-section h2 {
+            margin-bottom: 10px;
+            
+        }
+        .expense-item {
+            margin-bottom: 5px;
+            color:white;
+        }
+        .expense-item label {
+            font-weight: bold;
+        }
+
+        .burger {
+            width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    cursor: pointer;
+    transition: 300ms;
+    border-radius: 10px;
+    position: fixed; /* Define a posição fixa */
+    top: 20px; /* Distância do topo */
+    left: 20px; /* Distância da esquerda */
+}
+.burger input[type="checkbox"] {
+  appearance: none;
+  transition: 300ms;
+}
+
+.burger::before,
+.burger::after {
+  content: "";
+  transition: 300ms;
+  transform-origin: center center;
+}
+
+.burger::before {
+  transform: translateY(8px);
+}
+.burger::after {
+  transform: translateY(-8px);
+}
+.burger .line,
+.burger::before,
+.burger::after {
+  width: 25px;
+  height: 2.1px;
+  display: block;
+  background-color: black;
+  border-radius: 5px;
+  position: absolute;
+}
+
+.burger .line:checked {
+  width: 0;
+  transition-delay: 100ms;
+}
+.burger:has(.line:checked)::before {
+  animation: animation1 400ms ease-out 0s 1 both;
+}
+.burger:has(.line:checked)::after {
+  animation: animation2 400ms ease-out 0s 1 both;
+}
+
+.burger:hover {
+  background: #aeaeae;
+  border-radius: 50%;
+}
+
+.burger:hover .line,
+.burger:hover::before,
+.burger:hover::after {
+  background: #e8e8e8;
+}
+
+.burger:active {
+  scale: 0.95;
+}
+@keyframes animation1 {
+  0% {
+    transform: translateY(8px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(45deg);
+  }
+}
+@keyframes animation2 {
+  0% {
+    transform: translateY(-8px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(-45deg);
+  }
+}
+
+.span{
+    color: 	#00FF7F;
+}
+
+.span2{
+    color:red;
+}
+
+.span3{
+    color:#ffff;
+}
+
+.mes{
+    height: 20px;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    cursor: pointer;
+    left: 20px;
+    font-family: Arial Narrow, sans-serif
+    
+}
+
+    
+    </style>
+</head>
+<body>
+    <div class="expenses-section">
+        <h1 class="mes">Julho <i class="mdi mdi-arrow-right-bold"></i>
+
+        </h1> 
+        <div class="expense-item">
+            <label>Pagas</label>
+            <span class="span">$15.000,00</span>
+        </div>
+        <div class="expense-item">
+            <label>Falta Pagar</label>
+            <span class="span2">$2.500,50</span>
+        </div>
+        <div class="expense-item">
+            <label>Pravisto</label>
+            <span class="span3">$17.500,50</span>
+        </div>
+    </div>
+
+    <div class="burger-icon">
+        <label class="burger" for="burger">
+          <input class="line" type="checkbox" id="burger" />
+        </label>
+      </div>
+    <div>
+        <label>Despesas fixas</label>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,70 @@
+.sidebar {
+height: 100%;
+width: 250px;
+position: fixed;
+top: 0;
+left: -250px; /* Alterado para -250px para ocultar o menu lateral */
+background-color: #111;
+padding-top: 20px;
+transition: left 0.5s; /* Adicionado transição para uma animação suave */
+
+}
+
+.sidebar.active {
+left: 0; /* Alterado para 0 para mostrar o menu lateral quando ativo */
+
+}
+
+.sidebar a {
+padding: 10px;
+text-decoration: none;
+font-size: 18px;
+color: #818181;
+display: block;
+
+}
+
+.sidebar a:hover {
+color: #f1f1f1;
+}
+
+.sidebar img {
+    display: block;
+    margin: 0 auto;
+    width: 60%; /* Ajuste o tamanho conforme necessário */
+    padding: 10px 0;
+    border-radius: 50%; /* Deixa a borda redonda */
+
+   
+}
+
+.bt-menu {
+    width: 10vw; 
+    border-radius: 0px;
+
+   
+}
+
+.img-menu{
+    width: 3vw;
+    
+    
+}
+
+.tudo{
+    background-image: linear-gradient(#D3D3D3,#245B8E);
+    background-color:#D3D3D3;
+   
+}
+
+.logo2{
+    width: 240px;
+    padding-bottom: 20px;
+}
+
+.menu{
+    background-color:#D3D3D3;
+}
+
+
+
