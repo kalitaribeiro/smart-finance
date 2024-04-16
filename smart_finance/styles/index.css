@@ -48,8 +48,6 @@ button {
     cursor: pointer;
 }
 button:hover {
-    background: var(--light-green);
-    
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
