@@ -312,7 +312,7 @@ ul{
 .seccion4 button {
   margin-top: 30px;
   padding: 1em;
-  background-color: #6495ED;
+  background-color:#00008B;
   color: black;
   border: none;
   border-radius: 8px;
@@ -362,7 +362,7 @@ ul{
 }
 
 .pie p{
-  color: #6495ED;
+  color:#00008B;
   font-size: 20px;
 }
 
@@ -374,7 +374,7 @@ ul{
 
 #iconoPie{
   margin: 0.2em;
-  color:#6495ED;
+  color:#00008B;
   font-size: 2.5em;
 }
 
@@ -477,7 +477,7 @@ ul{
   }
 
   #spanHeader:hover {
-      color: 	#00008B;
+      color:#00008B;
       transition: color 0.3s ease;
   }
 
