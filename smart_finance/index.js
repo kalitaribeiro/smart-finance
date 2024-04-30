@@ -258,3 +258,72 @@ function toastError(message = "ERRO!") {
         toastId.className = toastId.className.replace("show", "")
     }, 5000)
 }
+
+// Carregando a biblioteca SQL.js
+let SQL = null;
+let db = null;
+
+init();
+
+async function init() {
+    // Carregar a biblioteca SQL.js
+    SQL = await initSqlJs({ locateFile: filename => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.1/${filename}` });
+
+    // Abrir ou criar o banco de dados
+    db = new SQL.Database();
+    createTable();
+}
+
+// Função para criar a tabela 'smart_finance'
+function createTable() {
+    const createTableQuery = `
+        CREATE TABLE IF NOT EXISTS smart_despesas (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            description TEXT,
+            amount REAL,
+            date TEXT
+        )
+    `;
+    db.run(createTableQuery);
+}
+
+// Função para adicionar uma despesa ao banco de dados
+function addExpense(description, amount, date) {
+    const insertQuery = `
+        INSERT INTO smart_despesas (description, amount, date)
+        VALUES (?, ?, ?)
+    `;
+    db.run(insertQuery, [description, amount, date]);
+}
+
+// Função para exibir todas as despesas na página
+function displayExpenses() {
+    const expensesList = document.getElementById('expensesList');
+    expensesList.innerHTML = '';
+
+    const selectQuery = `
+        SELECT * FROM smart_despesas
+    `;
+    const results = db.exec(selectQuery);
+    const rows = results[0].values;
+
+    rows.forEach(row => {
+        const [id, description, amount, date] = row;
+        const expenseItem = document.createElement('div');
+        expenseItem.innerHTML = `<strong>${description}</strong> - ${amount} - ${date}`;
+        expensesList.appendChild(expenseItem);
+    });
+}
+
+// Ao enviar o formulário, adicionar a despesa ao banco de dados e atualizar a lista de despesas
+document.getElementById('expenseForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const description = document.getElementById('description').value;
+    const amount = document.getElementById('amount').value;
+    const date = document.getElementById('date').value;
+
+    addExpense(description, amount, date);
+    displayExpenses();
+    // Limpar o formulário após adicionar a despesa
+    event.target.reset();
+});

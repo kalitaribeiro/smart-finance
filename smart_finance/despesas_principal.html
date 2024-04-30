@@ -49,11 +49,6 @@
 </head>
 
 <body>
-
-    <cfquery>
-        SELECT descricao, valor, data
-        FROM smart_despesas
-    </cfquery>
     <button class="menu" onclick="toggleMenu()"><img class="img-menu" src="menu.jpg" alt="Menu" style="border-radius:30px; float:left;margin-left:20px;"></button>
 
        
@@ -116,7 +111,8 @@
             <!-- Substituído pelo FloatButton -->
             <!-- <a href="#" onclick="Modal.open()" class="button new">+ Nova Transação</a> -->
 
-            <table id="data-table">
+            <table id="data-table"
+                id="expensesList">
                 <thead>
                     <tr>
                         <th>Descrição</th>
@@ -200,6 +196,10 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
     </script>
+
+     <!-- Inclua o script SQLite.js -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.1/sql-wasm.js"></script>
+     <script src="index.js"></script>
    
 </body>
 </html>
